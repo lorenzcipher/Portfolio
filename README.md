@@ -27,8 +27,6 @@
   <img width="12" />
   <img src="https://www.python.org/static/community_logos/python-logo-generic.svg" height="40" alt="python logo"  />
   <img width="12" />
-  <img src="https://www.python.org/static/community_logos/python-logo-generic.svg" height="40" alt="python logo"  />
-   <img width="12" />
   <img src="https://github.com/Pedro-Murilo/icons-for-readme/blob/main/.github/css-icon.svg" height="40" alt="css logo"  />
   <img width="12" />
   <img src="https://github.com/Pedro-Murilo/icons-for-readme/blob/main/.github/figma-icon.svg" height="40" alt="figma logo"  />
