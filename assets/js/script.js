@@ -164,46 +164,15 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 
 
+// email sender function
 
-// mail sender
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('contactForm');
-  const inputs = form.querySelectorAll('[data-form-input]');
-  const submitButton = form.querySelector('[data-form-btn]');
-
-  function checkFormValidity() {
-    let allFilled = true;
-    inputs.forEach(input => {
-      if (!input.value.trim()) {
-        allFilled = false;
-      }
-    });
-    submitButton.disabled = !allFilled;
+function sendMail(){
+  let params = {
+    name : document.getElementById("name").value,
+    email : document.getElementById("email").value,
+    subject : document.getElementById("subject").value,
+    message : document.getElementById("message").value
   }
 
-  inputs.forEach(input => {
-    input.addEventListener('input', checkFormValidity);
-  });
-
-  form.addEventListener('submit', async function(event) {
-    event.preventDefault();
-    const formData = new FormData(form);
-    const data = {};
-    formData.forEach((value, key) => data[key] = value);
-
-    const response = await fetch('/send-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-
-    if (response.ok) {
-      alert('Message sent successfully!');
-      form.reset();
-      checkFormValidity();
-    } else {
-      alert('Failed to send message.');
-    }
-  });
-});
-
+  emailjs.send("service_kfsaia8","template_c8c64qs",params).then(alert("Email sent!!"))
+}
